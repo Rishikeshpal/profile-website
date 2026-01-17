@@ -18,7 +18,7 @@ As founder of **[Metermate.vet](https://metermate.vet)**, I built the platform e
 
 ## 🔧 Automation & Languages
 
-Strong focus on automation across the stack using **Python**, **Go**, **Bash**, **JavaScript/TypeScript**, and **Solidity**. From CI/CD pipelines to infrastructure-as-code to smart contracts — I believe in automating everything.
+Strong focus on automation across the stack using **Python**, **Go**, **Bash**, **JavaScript/TypeScript**, **Node.js**, and **npm**. From CI/CD pipelines to infrastructure-as-code to build automation — I believe in automating everything.
 
 ## 📬 Connect
 
