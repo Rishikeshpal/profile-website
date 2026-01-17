@@ -14,7 +14,7 @@ I'm an engineering leader passionate about building reliable, scalable infrastru
 
 ## 📬 Connect
 
-- **LinkedIn:** [linkedin.com/in/rishipal](https://linkedin.com/in/rishipal)
+- **LinkedIn:** [linkedin.com/in/rishi-pal-b8aa5b20](https://www.linkedin.com/in/rishi-pal-b8aa5b20/)
 - **GitHub:** [github.com/Rishikeshpal](https://github.com/Rishikeshpal)
 - **Email:** Available on the website
 
