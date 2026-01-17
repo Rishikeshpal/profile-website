@@ -14,7 +14,7 @@ I'm an engineering leader passionate about building reliable, scalable infrastru
 
 ## 🚀 Founder — Metermate
 
-As founder of **[Metermate.vet](https://metermate.vet)**, I built the platform end-to-end — from frontend and backend development to blockchain integration. This project showcases my hands-on approach to full-stack development and Web3 technologies.
+As founder of **[MeterMate.vet](https://metermate.vet)**, I built the platform end-to-end — from frontend and backend development to blockchain integration. This project showcases my hands-on approach to full-stack development and Web3 technologies.
 
 ## 🔧 Automation & Languages
 
