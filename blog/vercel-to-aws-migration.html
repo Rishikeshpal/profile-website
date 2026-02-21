@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How We Saved $45K/Year by Migrating from Vercel to AWS | Rishi Pal</title>
+    <meta name="description" content="A technical deep-dive into migrating frontend applications from Vercel to AWS CloudFront + S3 for CSR and App Runner for SSR — achieving 45K annual savings.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../blog.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-grid"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <a href="../index.html" class="nav-logo">
+            <span class="logo-bracket">{</span>
+            <span class="logo-text">RP</span>
+            <span class="logo-bracket">}</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#experience">Experience</a></li>
+            <li><a href="../index.html#skills">Skills</a></li>
+            <li><a href="../index.html#certifications">Certifications</a></li>
+            <li><a href="../blog.html" class="active">Blog</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#experience">Experience</a></li>
+            <li><a href="../index.html#skills">Skills</a></li>
+            <li><a href="../index.html#certifications">Certifications</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Article -->
+    <article class="blog-article">
+        <header class="article-header">
+            <div class="container">
+                <a href="../blog.html" class="back-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Back to Blog
+                </a>
+                <div class="article-meta">
+                    <span class="article-category">Cloud Migration</span>
+                    <span class="article-date">February 2026</span>
+                    <span class="article-read-time">12 min read</span>
+                </div>
+                <h1 class="article-title">How We Saved $45K/Year by Migrating from Vercel to AWS</h1>
+                <p class="article-subtitle">A technical deep-dive into replacing Vercel with CloudFront + S3 for CSR applications and App Runner for SSR — while maintaining developer experience.</p>
+                <div class="article-author">
+                    <div class="author-avatar">RP</div>
+                    <div class="author-info">
+                        <span class="author-name">Rishi Pal</span>
+                        <span class="author-role">Engineering Team Lead</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="article-content">
+            <div class="container">
+                <!-- Key Metrics -->
+                <div class="metrics-banner">
+                    <div class="metric">
+                        <span class="metric-value">$45K</span>
+                        <span class="metric-label">Annual Savings</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">12</span>
+                        <span class="metric-label">Apps Migrated</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">99.9%</span>
+                        <span class="metric-label">Uptime Maintained</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">2 weeks</span>
+                        <span class="metric-label">Migration Time</span>
+                    </div>
+                </div>
+
+                <div class="content-body">
+                    <h2>The Vercel Attraction: Why We Started There</h2>
+                    
+                    <p>Let's be honest — <strong>Vercel is an exceptional platform</strong>. When our team first adopted it, the appeal was immediate and undeniable:</p>
+                    
+                    <ul>
+                        <li><strong>Zero-config deployments</strong> — Push to Git, and it's live</li>
+                        <li><strong>Automatic preview environments</strong> — Every PR gets its own URL for QA</li>
+                        <li><strong>Edge Functions</strong> — Run code at the edge without managing infrastructure</li>
+                        <li><strong>Next.js optimization</strong> — First-class support for the framework we heavily used</li>
+                        <li><strong>Developer experience</strong> — The CLI, dashboard, and integrations are polished</li>
+                    </ul>
+
+                    <p>For a team moving fast, Vercel was <em>magical</em>. Frontend developers could deploy without waiting for DevOps. Preview URLs made stakeholder reviews seamless. The DX was unmatched.</p>
+
+                    <div class="callout warning">
+                        <div class="callout-icon">⚠️</div>
+                        <div class="callout-content">
+                            <strong>The Hidden Cost</strong>
+                            <p>What started as a $20/month hobby plan grew to $4,500/month as we scaled to 12 applications with multiple environments, concurrent builds, and bandwidth demands.</p>
+                        </div>
+                    </div>
+
+                    <h2>The Breaking Point: $54K/Year for Frontend Hosting</h2>
+
+                    <p>As our organization scaled, so did the Vercel bill. Here's what drove the costs:</p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-title">Monthly Vercel Costs Breakdown</span>
+                        </div>
+                        <pre><code>Team Pro Plan:                    $400/month
+Additional Team Members (8):      $160/month  
+Concurrent Builds:                $500/month
+Bandwidth (800GB):               $1,200/month
+Edge Function Invocations:        $800/month
+Preview Deployments:              $600/month
+Enterprise Features:              $840/month
+─────────────────────────────────────────────
+Total:                          ~$4,500/month
+Annual:                         ~$54,000/year</code></pre>
+                    </div>
+
+                    <p>For a DevOps team obsessed with cost optimization, this was unacceptable — especially when we knew AWS could deliver the same (or better) performance at a fraction of the cost.</p>
+
+                    <h2>The Strategic Decision: Why an Experienced DevOps Team Matters</h2>
+
+                    <p>This is where having <strong>battle-tested DevOps engineers</strong> becomes invaluable. A junior team might have:</p>
+
+                    <ul>
+                        <li>Accepted the costs as "the price of good DX"</li>
+                        <li>Over-engineered a Kubernetes solution</li>
+                        <li>Lost months trying to replicate every Vercel feature</li>
+                    </ul>
+
+                    <p>An experienced team asks different questions:</p>
+
+                    <div class="highlight-box">
+                        <h4>Key Questions We Asked</h4>
+                        <ol>
+                            <li>What do we <em>actually</em> need vs. what's nice-to-have?</li>
+                            <li>Which workloads are CSR (static) vs. SSR (dynamic)?</li>
+                            <li>Can we replicate the critical DX features (preview envs) cheaply?</li>
+                            <li>What's the total cost of ownership including maintenance?</li>
+                        </ol>
+                    </div>
+
+                    <h2>The Architecture: Two Solutions for Two Problems</h2>
+
+                    <p>We analyzed our 12 applications and categorized them:</p>
+
+                    <div class="comparison-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Apps</th>
+                                    <th>Vercel Solution</th>
+                                    <th>AWS Solution</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>CSR (Static)</strong></td>
+                                    <td>8 apps</td>
+                                    <td>Vercel Edge Network</td>
+                                    <td>CloudFront + S3</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SSR (Dynamic)</strong></td>
+                                    <td>4 apps</td>
+                                    <td>Vercel Functions</td>
+                                    <td>App Runner</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Solution 1: CloudFront + S3 for CSR Applications</h3>
+
+                    <p>For Client-Side Rendered applications (React SPAs, static Next.js exports), the architecture is straightforward:</p>
+
+                    <div class="architecture-diagram">
+                        <div class="arch-flow">
+                            <div class="arch-node">GitHub Actions</div>
+                            <div class="arch-arrow">→</div>
+                            <div class="arch-node">Build & Test</div>
+                            <div class="arch-arrow">→</div>
+                            <div class="arch-node">S3 Bucket</div>
+                            <div class="arch-arrow">→</div>
+                            <div class="arch-node">CloudFront CDN</div>
+                            <div class="arch-arrow">→</div>
+                            <div class="arch-node">Users</div>
+                        </div>
+                    </div>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-title">.github/workflows/deploy-csr.yml</span>
+                        </div>
+                        <pre><code class="language-yaml">name: Deploy CSR to CloudFront
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  AWS_REGION: eu-west-1
+  S3_BUCKET: ${{ secrets.S3_BUCKET }}
+  CLOUDFRONT_DIST_ID: ${{ secrets.CLOUDFRONT_DIST_ID }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build
+        run: npm run build
+        env:
+          NEXT_PUBLIC_API_URL: ${{ vars.API_URL }}
+      
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+      
+      # Production deployment
+      - name: Deploy to S3
+        if: github.ref == 'refs/heads/main'
+        run: |
+          aws s3 sync ./out s3://$S3_BUCKET --delete
+          
+      - name: Invalidate CloudFront
+        if: github.ref == 'refs/heads/main'
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id $CLOUDFRONT_DIST_ID \
+            --paths "/*"
+      
+      # Preview deployment for PRs
+      - name: Deploy Preview
+        if: github.event_name == 'pull_request'
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          aws s3 sync ./out s3://$S3_BUCKET-previews/pr-$PR_NUMBER --delete
+          echo "Preview URL: https://preview-$PR_NUMBER.example.com"</code></pre>
+                    </div>
+
+                    <h3>Solution 2: App Runner for SSR Applications</h3>
+
+                    <p>For Server-Side Rendered applications (Next.js with API routes, dynamic pages), <strong>AWS App Runner</strong> was the perfect fit:</p>
+
+                    <ul>
+                        <li><strong>No infrastructure management</strong> — Similar to Vercel's serverless model</li>
+                        <li><strong>Auto-scaling</strong> — Scales to zero when idle, scales up under load</li>
+                        <li><strong>Container-based</strong> — Full control over the runtime environment</li>
+                        <li><strong>VPC integration</strong> — Can connect to private RDS, ElastiCache, etc.</li>
+                    </ul>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-title">.github/workflows/deploy-ssr.yml</span>
+                        </div>
+                        <pre><code class="language-yaml">name: Deploy SSR to App Runner
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  AWS_REGION: eu-west-1
+  ECR_REPOSITORY: my-ssr-app
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+      
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+      
+      - name: Build and push Docker image
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+      
+      # Production deployment
+      - name: Update App Runner Service
+        if: github.ref == 'refs/heads/main'
+        run: |
+          aws apprunner update-service \
+            --service-arn ${{ secrets.APPRUNNER_SERVICE_ARN }} \
+            --source-configuration '{
+              "ImageRepository": {
+                "ImageIdentifier": "'$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG'",
+                "ImageRepositoryType": "ECR"
+              }
+            }'
+      
+      # Preview environment for PRs
+      - name: Create Preview Environment
+        if: github.event_name == 'pull_request'
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          # Create temporary App Runner service for preview
+          # (Or use a shared preview service with path-based routing)</code></pre>
+                    </div>
+
+                    <h3>The Dockerfile for SSR Apps</h3>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-title">Dockerfile</span>
+                        </div>
+                        <pre><code class="language-dockerfile">FROM node:20-alpine AS base
+
+# Install dependencies only when needed
+FROM base AS deps
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --only=production
+
+# Build the application
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+RUN npm run build
+
+# Production image
+FROM base AS runner
+WORKDIR /app
+
+ENV NODE_ENV production
+ENV PORT 8080
+
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+
+COPY --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+USER nextjs
+
+EXPOSE 8080
+
+CMD ["node", "server.js"]</code></pre>
+                    </div>
+
+                    <h2>Replicating Preview Environments</h2>
+
+                    <p>The biggest concern from developers: <em>"But what about preview URLs for every PR?"</em></p>
+
+                    <p>We solved this with a <strong>lightweight preview system</strong>:</p>
+
+                    <div class="highlight-box">
+                        <h4>Preview Environment Strategy</h4>
+                        <p><strong>For CSR apps:</strong> Deploy to <code>s3://bucket-previews/pr-{number}</code> with a wildcard CloudFront distribution pointing to <code>*.preview.example.com</code></p>
+                        <p><strong>For SSR apps:</strong> Use a shared "preview" App Runner service with environment-variable-based routing, or spin up temporary services for larger PRs.</p>
+                    </div>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-title">Terraform: Preview CloudFront Distribution</span>
+                        </div>
+                        <pre><code class="language-hcl">resource "aws_cloudfront_distribution" "preview" {
+  enabled             = true
+  default_root_object = "index.html"
+  
+  aliases = ["*.preview.example.com"]
+
+  origin {
+    domain_name = aws_s3_bucket.previews.bucket_regional_domain_name
+    origin_id   = "S3-previews"
+
+    s3_origin_config {
+      origin_access_identity = aws_cloudfront_origin_access_identity.preview.cloudfront_access_identity_path
+    }
+  }
+
+  default_cache_behavior {
+    allowed_methods  = ["GET", "HEAD"]
+    cached_methods   = ["GET", "HEAD"]
+    target_origin_id = "S3-previews"
+
+    forwarded_values {
+      query_string = false
+      cookies {
+        forward = "none"
+      }
+    }
+
+    # Use Lambda@Edge to route based on subdomain
+    lambda_function_association {
+      event_type   = "origin-request"
+      lambda_arn   = aws_lambda_function.preview_router.qualified_arn
+      include_body = false
+    }
+
+    viewer_protocol_policy = "redirect-to-https"
+    min_ttl                = 0
+    default_ttl            = 3600
+    max_ttl                = 86400
+  }
+
+  viewer_certificate {
+    acm_certificate_arn      = aws_acm_certificate.preview.arn
+    ssl_support_method       = "sni-only"
+    minimum_protocol_version = "TLSv1.2_2021"
+  }
+}</code></pre>
+                    </div>
+
+                    <h2>The Results: Cost Breakdown</h2>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-title">AWS Monthly Costs (Same Workload)</span>
+                        </div>
+                        <pre><code>CloudFront (800GB bandwidth):       $68/month
+S3 Storage (50GB):                  $1.15/month
+S3 Requests:                        $5/month
+App Runner (4 services):            $180/month
+ECR Storage:                        $10/month
+Route 53:                           $2/month
+ACM Certificates:                   $0 (free)
+GitHub Actions (included):          $0
+─────────────────────────────────────────────
+Total:                             ~$270/month
+Annual:                            ~$3,240/year
+
+Savings: $54,000 - $3,240 = <span class="highlight">$50,760/year</span></code></pre>
+                    </div>
+
+                    <div class="callout success">
+                        <div class="callout-icon">💰</div>
+                        <div class="callout-content">
+                            <strong>93% Cost Reduction</strong>
+                            <p>Even accounting for engineering time (2 weeks at ~$5K), the ROI was achieved in the first month. Conservative estimate: <strong>$45K+ annual savings</strong>.</p>
+                        </div>
+                    </div>
+
+                    <h2>What We Kept, What We Lost</h2>
+
+                    <div class="comparison-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Vercel</th>
+                                    <th>AWS Solution</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Zero-config deploys</td>
+                                    <td>✅ Built-in</td>
+                                    <td>✅ GitHub Actions</td>
+                                    <td class="status-kept">Kept</td>
+                                </tr>
+                                <tr>
+                                    <td>Preview environments</td>
+                                    <td>✅ Automatic</td>
+                                    <td>✅ Custom solution</td>
+                                    <td class="status-kept">Kept</td>
+                                </tr>
+                                <tr>
+                                    <td>Global CDN</td>
+                                    <td>✅ Vercel Edge</td>
+                                    <td>✅ CloudFront</td>
+                                    <td class="status-kept">Kept</td>
+                                </tr>
+                                <tr>
+                                    <td>Auto-scaling</td>
+                                    <td>✅ Serverless</td>
+                                    <td>✅ App Runner</td>
+                                    <td class="status-kept">Kept</td>
+                                </tr>
+                                <tr>
+                                    <td>Instant rollbacks</td>
+                                    <td>✅ Dashboard</td>
+                                    <td>✅ ECR image tags</td>
+                                    <td class="status-kept">Kept</td>
+                                </tr>
+                                <tr>
+                                    <td>Analytics</td>
+                                    <td>✅ Built-in</td>
+                                    <td>⚡ CloudWatch + custom</td>
+                                    <td class="status-modified">Modified</td>
+                                </tr>
+                                <tr>
+                                    <td>Edge Functions</td>
+                                    <td>✅ Native</td>
+                                    <td>⚡ Lambda@Edge</td>
+                                    <td class="status-modified">Modified</td>
+                                </tr>
+                                <tr>
+                                    <td>Pretty dashboard</td>
+                                    <td>✅ Excellent</td>
+                                    <td>❌ AWS Console</td>
+                                    <td class="status-lost">Lost</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h2>Key Takeaways: Why DevOps Experience Matters</h2>
+
+                    <p>This migration succeeded because of <strong>experienced engineering decisions</strong>:</p>
+
+                    <div class="takeaway-grid">
+                        <div class="takeaway-card">
+                            <div class="takeaway-number">1</div>
+                            <h4>Know When to Build vs. Buy</h4>
+                            <p>Vercel is worth it for small teams. At scale, the math changes. We recognized the inflection point.</p>
+                        </div>
+                        <div class="takeaway-card">
+                            <div class="takeaway-number">2</div>
+                            <h4>Right-Size the Solution</h4>
+                            <p>We didn't build a Kubernetes cluster. CloudFront + S3 and App Runner were <em>exactly</em> enough.</p>
+                        </div>
+                        <div class="takeaway-card">
+                            <div class="takeaway-number">3</div>
+                            <h4>Protect Developer Experience</h4>
+                            <p>Preview environments weren't negotiable. We built a lightweight solution that preserved the workflow.</p>
+                        </div>
+                        <div class="takeaway-card">
+                            <div class="takeaway-number">4</div>
+                            <h4>Measure Total Cost of Ownership</h4>
+                            <p>The "free" features of managed platforms have hidden costs. Calculate the full picture.</p>
+                        </div>
+                    </div>
+
+                    <h2>Should You Migrate?</h2>
+
+                    <p><strong>Stay on Vercel if:</strong></p>
+                    <ul>
+                        <li>You're a small team (&lt; 5 developers)</li>
+                        <li>You have &lt; 5 applications</li>
+                        <li>Developer time is more expensive than hosting costs</li>
+                        <li>You heavily use Vercel-specific features (ISR, Edge Config)</li>
+                    </ul>
+
+                    <p><strong>Consider migrating if:</strong></p>
+                    <ul>
+                        <li>Monthly Vercel bill exceeds $1,000</li>
+                        <li>You have DevOps capacity to maintain pipelines</li>
+                        <li>You need VPC integration for backend services</li>
+                        <li>You're already using AWS for other workloads</li>
+                    </ul>
+
+                    <div class="callout info">
+                        <div class="callout-icon">💡</div>
+                        <div class="callout-content">
+                            <strong>The Bottom Line</strong>
+                            <p>Vercel is a premium product with premium pricing. For organizations with DevOps maturity, AWS provides the same capabilities at 90%+ lower cost. The key is having the expertise to execute the migration without sacrificing developer experience.</p>
+                        </div>
+                    </div>
+
+                    <div class="article-cta">
+                        <p>Questions about this migration or similar cost optimization strategies? <a href="../index.html#contact">Get in touch</a> — I'm happy to discuss your specific use case.</p>
+                    </div>
+                </div>
+
+                <!-- Article Footer -->
+                <footer class="article-footer">
+                    <div class="article-tags">
+                        <span>AWS</span>
+                        <span>CloudFront</span>
+                        <span>S3</span>
+                        <span>App Runner</span>
+                        <span>Vercel</span>
+                        <span>Cost Optimization</span>
+                        <span>DevOps</span>
+                        <span>GitHub Actions</span>
+                    </div>
+                    <div class="article-share">
+                        <span>Share this article:</span>
+                        <a href="https://twitter.com/intent/tweet?text=How We Saved $45K/Year by Migrating from Vercel to AWS&url=" target="_blank" class="share-link">Twitter</a>
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=How We Saved $45K/Year by Migrating from Vercel to AWS" target="_blank" class="share-link">LinkedIn</a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-bracket">{</span>
+                    <span class="logo-text">Rishi Pal</span>
+                    <span class="logo-bracket">}</span>
+                </div>
+                <p class="footer-text">Engineering Team Lead · Blockchain & Cloud Expert</p>
+                <p class="copyright">&copy; 2026 Rishi Pal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Rishi Pal - Engineering Insights</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-grid"></div>
+    <div class="floating-nodes" id="floatingNodes"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <a href="index.html" class="nav-logo">
+            <span class="logo-bracket">{</span>
+            <span class="logo-text">RP</span>
+            <span class="logo-bracket">}</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#experience">Experience</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#certifications">Certifications</a></li>
+            <li><a href="blog.html" class="active">Blog</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#experience">Experience</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#certifications">Certifications</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Blog Header -->
+    <section class="blog-header">
+        <div class="container">
+            <span class="section-tag">&lt;blog&gt;</span>
+            <h1 class="blog-title">Engineering Insights</h1>
+            <p class="blog-subtitle">Deep dives into DevOps, Cloud Architecture, and Infrastructure Engineering</p>
+        </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="blog-posts section">
+        <div class="container">
+            <div class="posts-grid">
+                <!-- Featured Post -->
+                <article class="post-card featured">
+                    <div class="post-image">
+                        <div class="post-image-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+                                <path d="M13 14l-3-3 3-3"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Cloud Migration</span>
+                            <span class="post-date">February 2026</span>
+                            <span class="post-read-time">12 min read</span>
+                        </div>
+                        <h2 class="post-title">
+                            <a href="blog/vercel-to-aws-migration.html">How We Saved $45K/Year by Migrating from Vercel to AWS</a>
+                        </h2>
+                        <p class="post-excerpt">
+                            A technical deep-dive into migrating frontend applications from Vercel to AWS CloudFront + S3 for CSR 
+                            and App Runner for SSR — while maintaining developer experience with preview environments.
+                        </p>
+                        <div class="post-tags">
+                            <span>AWS</span>
+                            <span>CloudFront</span>
+                            <span>App Runner</span>
+                            <span>Cost Optimization</span>
+                        </div>
+                        <a href="blog/vercel-to-aws-migration.html" class="read-more">
+                            Read Full Article
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- More posts can be added here -->
+            </div>
+
+            <!-- Coming Soon -->
+            <div class="coming-soon">
+                <div class="coming-soon-content">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                    </svg>
+                    <h3>More Articles Coming Soon</h3>
+                    <p>Stay tuned for deep dives into Kubernetes, Blockchain Infrastructure, and Platform Engineering.</p>
+                </div>
+            </div>
+
+            <span class="section-tag closing">&lt;/blog&gt;</span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-bracket">{</span>
+                    <span class="logo-text">Rishi Pal</span>
+                    <span class="logo-bracket">}</span>
+                </div>
+                <p class="footer-text">Engineering Team Lead · Blockchain & Cloud Expert</p>
+                <p class="copyright">&copy; 2026 Rishi Pal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
