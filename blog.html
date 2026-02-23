@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog | Rishi Pal - Engineering Insights</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="blog.css">
 </head>
+
 <body>
     <!-- Animated Background -->
     <div class="bg-grid"></div>
     <div class="floating-nodes" id="floatingNodes"></div>
-    
+
     <!-- Navigation -->
     <nav class="navbar scrolled" id="navbar">
         <a href="index.html" class="nav-logo">
@@ -69,8 +73,8 @@
                     <div class="post-image">
                         <div class="post-image-placeholder">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
-                                <path d="M13 14l-3-3 3-3"/>
+                                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+                                <path d="M13 14l-3-3 3-3" />
                             </svg>
                         </div>
                     </div>
@@ -81,10 +85,12 @@
                             <span class="post-read-time">12 min read</span>
                         </div>
                         <h2 class="post-title">
-                            <a href="blog/vercel-to-aws-migration.html">How We Saved $45K/Year by Migrating from Vercel to AWS</a>
+                            <a href="blog/vercel-to-aws-migration.html">How We Saved $45K/Year by Migrating from Vercel
+                                to AWS</a>
                         </h2>
                         <p class="post-excerpt">
-                            A technical deep-dive into migrating frontend applications from Vercel to AWS CloudFront + S3 for CSR 
+                            A technical deep-dive into migrating frontend applications from Vercel to AWS CloudFront +
+                            S3 for CSR
                             and App Runner for SSR — while maintaining developer experience with preview environments.
                         </p>
                         <div class="post-tags">
@@ -95,8 +101,49 @@
                         </div>
                         <a href="blog/vercel-to-aws-migration.html" class="read-more">
                             Read Full Article
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Observability Post -->
+                <article class="post-card">
+                    <div class="post-image">
+                        <div class="post-image-placeholder observability">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M3 3v18h18" />
+                                <path d="M18 17V9" />
+                                <path d="M13 17V5" />
+                                <path d="M8 17v-3" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Observability</span>
+                            <span class="post-date">February 2026</span>
+                            <span class="post-read-time">15 min read</span>
+                        </div>
+                        <h2 class="post-title">
+                            <a href="blog/observability-strategy.html">Why Early Observability Adoption is Non-Negotiable: A Strategic Guide</a>
+                        </h2>
+                        <p class="post-excerpt">
+                            Choosing between Prometheus + Grafana, Datadog, and CloudWatch — balancing cost, engineering overhead, and operational maturity for blockchain and enterprise workloads.
+                        </p>
+                        <div class="post-tags">
+                            <span>Prometheus</span>
+                            <span>Grafana</span>
+                            <span>Datadog</span>
+                            <span>CloudWatch</span>
+                        </div>
+                        <a href="blog/observability-strategy.html" class="read-more">
+                            Read Full Article
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </a>
                     </div>
@@ -109,10 +156,12 @@
             <div class="coming-soon">
                 <div class="coming-soon-content">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                        <path
+                            d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
                     </svg>
                     <h3>More Articles Coming Soon</h3>
-                    <p>Stay tuned for deep dives into Kubernetes, Blockchain Infrastructure, and Platform Engineering.</p>
+                    <p>Stay tuned for deep dives into Kubernetes, Blockchain Infrastructure, and Platform Engineering.
+                    </p>
                 </div>
             </div>
 
@@ -137,4 +186,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
