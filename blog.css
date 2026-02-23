@@ -33,20 +33,20 @@
 }
 
 .posts-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 32px;
 }
 
-/* Post Card */
+/* Post Card - Horizontal Layout */
 .post-card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: 20px;
     overflow: hidden;
     transition: var(--transition-medium);
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 280px 1fr;
 }
 
 .post-card:hover {
@@ -60,7 +60,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 200px;
+    min-height: 280px;
     position: relative;
     overflow: hidden;
 }
@@ -77,8 +77,8 @@
 }
 
 .post-image-placeholder {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     background: rgba(0, 245, 212, 0.1);
     border-radius: 50%;
     display: flex;
@@ -96,8 +96,8 @@
 }
 
 .post-image-placeholder svg {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     stroke: var(--accent-primary);
 }
 
@@ -130,10 +130,9 @@
 }
 
 .post-content {
-    padding: 28px;
+    padding: 32px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
 }
 
 .post-meta {
@@ -161,10 +160,10 @@
 }
 
 .post-title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 700;
-    margin-bottom: 16px;
-    line-height: 1.3;
+    margin-bottom: 14px;
+    line-height: 1.35;
 }
 
 .post-title a {
@@ -190,8 +189,6 @@
     flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 20px;
-    margin-top: auto;
-    padding-top: 16px;
 }
 
 .post-tags span {
@@ -797,10 +794,12 @@
 
 /* Responsive */
 @media (max-width: 992px) {
-    .posts-grid {
-        grid-template-columns: 1fr;
-        max-width: 600px;
-        margin: 0 auto;
+    .post-card {
+        grid-template-columns: 220px 1fr;
+    }
+    
+    .post-image {
+        min-height: 240px;
     }
     
     .metrics-banner {
@@ -821,12 +820,12 @@
         font-size: 2.5rem;
     }
     
-    .posts-grid {
-        max-width: 100%;
+    .post-card {
+        grid-template-columns: 1fr;
     }
     
     .post-image {
-        height: 180px;
+        min-height: 180px;
     }
     
     .post-image-placeholder {
@@ -835,8 +834,8 @@
     }
     
     .post-image-placeholder svg {
-        width: 38px;
-        height: 38px;
+        width: 40px;
+        height: 40px;
     }
     
     .article-header {
@@ -870,7 +869,7 @@
     }
     
     .post-content {
-        padding: 20px;
+        padding: 24px;
     }
     
     .post-title {
