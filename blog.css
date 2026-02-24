@@ -130,6 +130,20 @@
     stroke: var(--accent-primary);
 }
 
+/* Strategy post type */
+.post-image-placeholder.strategy {
+    background: rgba(254, 228, 64, 0.1);
+    border-color: rgba(254, 228, 64, 0.25);
+}
+
+.post-card:hover .post-image-placeholder.strategy {
+    box-shadow: 0 0 30px rgba(254, 228, 64, 0.2);
+}
+
+.post-image-placeholder.strategy svg {
+    stroke: var(--accent-gold);
+}
+
 .post-content {
     padding: 32px;
     display: flex;
