@@ -144,6 +144,20 @@
     stroke: var(--accent-gold);
 }
 
+/* Blockchain style */
+.post-image-placeholder.blockchain {
+    background: rgba(156, 39, 176, 0.1);
+    border-color: rgba(156, 39, 176, 0.25);
+}
+
+.post-card:hover .post-image-placeholder.blockchain {
+    box-shadow: 0 0 30px rgba(156, 39, 176, 0.2);
+}
+
+.post-image-placeholder.blockchain svg {
+    stroke: #9c27b0;
+}
+
 .post-content {
     padding: 32px;
     display: flex;
