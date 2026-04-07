@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Rishi Pal — fractional DevOps, SRE, cloud architecture, blockchain node operations, and security. One consultant, full capacity. Kubernetes, Helm, Argo CD, cost optimization.">
+    <title>Rishi Pal | Platform & Infrastructure Consultancy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="consultancy.css">
+</head>
+
+<body>
+    <div class="bg-grid"></div>
+    <div class="floating-nodes" id="floatingNodes"></div>
+
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="nav-logo" style="text-decoration:none;color:inherit;">
+            <span class="logo-bracket">{</span>
+            <span class="logo-text">RP</span>
+            <span class="logo-bracket">}</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Portfolio</a></li>
+            <li><a href="consultancy.html" class="active">Consultancy</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Portfolio</a></li>
+            <li><a href="consultancy.html">Consultancy</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <section id="home" class="hero consultancy-hero">
+        <div class="container" style="display:flex;flex-wrap:wrap;align-items:center;gap:48px;">
+            <div class="hero-content">
+                <div class="consultancy-badge">
+                    <span class="status-dot" style="background:var(--accent-gold);box-shadow:none;"></span>
+                    One-stop platform & infrastructure partner
+                </div>
+                <h1>DevOps · SRE · Cloud · Blockchain NodeOps · Security</h1>
+                <p class="hero-lead">
+                    A single senior operator who covers the full modern stack: from Kubernetes and GitOps to
+                    production blockchain nodes, observability, and hardening—without the overhead of a large firm.
+                </p>
+                <p class="unicorn-line">
+                    → Unicorn-grade breadth: stack design, delivery, and cost optimisation in one engagement.
+                </p>
+                <p class="capacity-pill">
+                    <strong>One person, full capacity</strong> — fractional or project-based leadership with hands-on
+                    execution, not slide decks alone.
+                </p>
+                <div class="hero-cta" style="margin-top:32px;">
+                    <a href="#services" class="btn btn-primary">
+                        <span>Explore services</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="mailto:rishikesh.pal@gmail.com" class="btn btn-secondary">
+                        <span>Start a conversation</span>
+                    </a>
+                </div>
+                <div class="hero-stats" style="margin-top:40px;">
+                    <div class="stat">
+                        <span class="stat-number" data-count="18">0</span>
+                        <span class="stat-label">Years in production systems</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="40">0</span>
+                        <span class="stat-suffix">%+</span>
+                        <span class="stat-label">Infra cost reduction (example)</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="12">0</span>
+                        <span class="stat-label">Engineers led (peak team)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-header" data-aos>
+                <span class="section-tag">What I deliver</span>
+                <h2 class="section-title">Services</h2>
+                <p style="color:var(--text-secondary);max-width:640px;margin:16px auto 0;">
+                    End-to-end support for teams who need cloud-native operations, chain-grade reliability, and
+                    security—without stitching together five different vendors.
+                </p>
+            </div>
+            <div class="services-grid">
+                <article class="service-card" data-aos>
+                    <div class="service-icon">// DEVOPS & PLATFORM</div>
+                    <h3>DevOps &amp; platform engineering</h3>
+                    <p>CI/CD, Infrastructure as Code (Terraform, CDK), automated releases, and environments that match
+                        how your product actually ships.</p>
+                </article>
+                <article class="service-card" data-aos>
+                    <div class="service-icon">// SRE</div>
+                    <h3>Site reliability &amp; observability</h3>
+                    <p>SLOs, incident response, Prometheus, Grafana, Loki, Datadog—lower MTTR through measurable
+                        signals and practical runbooks.</p>
+                </article>
+                <article class="service-card" data-aos>
+                    <div class="service-icon">// CLOUD</div>
+                    <h3>Cloud architecture</h3>
+                    <p>Multi-cloud and AWS/GCP/Azure designs, migration, fault tolerance, and FinOps-minded
+                        architecture—proven on large regulated and SaaS workloads.</p>
+                </article>
+                <article class="service-card" data-aos>
+                    <div class="service-icon">// CHAIN</div>
+                    <h3>Core blockchain node operations</h3>
+                    <p>EVM and protocol nodes, RPC, validators, indexing pipelines, sync performance, upgrades, and
+                        secure key and wallet patterns.</p>
+                </article>
+                <article class="service-card" data-aos>
+                    <div class="service-icon">// SEC</div>
+                    <h3>Security &amp; DevSecOps</h3>
+                    <p>Kubernetes hardening, RBAC, policy (OPA), runtime security (Falco), service mesh TLS, and secure
+                        delivery pipelines.</p>
+                </article>
+                <article class="service-card" data-aos>
+                    <div class="service-icon">// AI &amp; FUTURE</div>
+                    <h3>AI &amp; emerging technology strategy</h3>
+                    <p>Practical automation with ML where it earns its place, plus a clear view on what to adopt next
+                        versus what is hype—aligned to your risk and compliance posture.</p>
+                </article>
+            </div>
+            <div class="tech-strip" data-aos>
+                <span class="tech-pill"><strong>Kubernetes</strong> · CKA / CKAD</span>
+                <span class="tech-pill"><strong>Helm</strong> · charts &amp; releases</span>
+                <span class="tech-pill"><strong>Argo CD</strong> · GitOps</span>
+                <span class="tech-pill"><strong>Software delivery</strong> · build to prod</span>
+                <span class="tech-pill"><strong>Cost optimisation</strong> · cloud &amp; chain</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="product" class="section" style="padding-top:0;">
+        <div class="container">
+            <div class="section-header" data-aos>
+                <span class="section-tag">Product &amp; innovation</span>
+                <h2 class="section-title">Built in production, not theory</h2>
+            </div>
+            <div class="spotlight">
+                <div class="spotlight-card" data-aos>
+                    <h3>MeterMate</h3>
+                    <p>
+                        A production dApp on VeChainThor—secure backend, AI-assisted fraud detection, DAO-driven
+                        incentives—with infrastructure, backend, and deployment owned end to end. That same
+                        ownership model applies to client work: clear accountability from code to cluster.
+                    </p>
+                    <a class="link-accent" href="https://metermate.vet" target="_blank" rel="noopener noreferrer">metermate.vet →</a>
+                </div>
+                <div class="spotlight-card" data-aos>
+                    <h3>AI &amp; emerging tech</h3>
+                    <p>
+                        Strategy that connects new tooling to outcomes: where automation fits, how to phase adoption,
+                        and how to keep operational costs and security under control as the stack evolves.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proof" class="section">
+        <div class="container">
+            <div class="section-header" data-aos>
+                <span class="section-tag">Fit &amp; engagement</span>
+                <h2 class="section-title">Why teams work with me</h2>
+                <p class="why-section-lead">
+                    Most “cloud” or “platform” issues are not a missing tool—they are layered: incentives, habits,
+                    and constraints underneath the ticket. Here is the behavioural stack I use to read a situation,
+                    plus the signals teams send when something is off—and how we work through it.
+                </p>
+            </div>
+
+            <h3 class="subsection-heading" data-aos>The behavioural stack</h3>
+            <p class="stack-explainer" data-aos>
+                Before we touch Kubernetes, Helm, or a chain client, it helps to see where pressure actually lives.
+                These layers stack—ignore the bottom and the top keeps breaking.
+            </p>
+            <div class="behavior-stack" data-aos role="region"
+                aria-label="Behavioural stack: four layers from surface symptoms down to constraints">
+                <div class="stack-layer stack-layer--symptom">
+                    <span class="stack-layer-label">Surface</span>
+                    <span class="stack-layer-text">Symptoms &amp; requests — “we need GitOps,” “costs are wild,” “nodes are flaky.”</span>
+                </div>
+                <div class="stack-layer stack-layer--habit">
+                    <span class="stack-layer-label">Habits</span>
+                    <span class="stack-layer-text">How teams ship, review, on-call, and learn — the real operating model.</span>
+                </div>
+                <div class="stack-layer stack-layer--align">
+                    <span class="stack-layer-label">Alignment</span>
+                    <span class="stack-layer-text">Product, security, finance, and engineering incentives — who is rewarded for what.</span>
+                </div>
+                <div class="stack-layer stack-layer--base">
+                    <span class="stack-layer-label">Constraints</span>
+                    <span class="stack-layer-text">Skills, budget, regulation, legacy — the non-negotiables that shape every bet.</span>
+                </div>
+            </div>
+
+            <h3 class="subsection-heading subsection-heading-spaced" data-aos>Good starting points</h3>
+            <p class="starting-points-intro" data-aos>
+                If one of these sounds like you, we map it onto the stack above and pick a sensible first move—no
+                noise, no theatre.
+            </p>
+            <div class="situation-grid situation-grid--starting">
+                <article class="situation-card starting-point-card" data-aos>
+                    <h4 class="situation-title">Figure Out What Actually Matters</h4>
+                    <p>Emerging technology—whether it is cloud, Blockchain, or AI—is everywhere. Most of it is noise.</p>
+                    <p>You want to know what&rsquo;s real, what works, and what&rsquo;s worth building.</p>
+                </article>
+                <article class="situation-card starting-point-card" data-aos>
+                    <h4 class="situation-title">Test Fast, Don&rsquo;t Waste Money</h4>
+                    <p>You&rsquo;ve got an idea. Instead of debating it for months, build a lean pilot, validate it, and
+                        kill or scale fast.</p>
+                </article>
+                <article class="situation-card starting-point-card" data-aos>
+                    <h4 class="situation-title">Unstick the Build</h4>
+                    <p>You started strong. Now it&rsquo;s stuck.</p>
+                    <p>You need someone to cut through complexity and get it shipped.</p>
+                </article>
+                <article class="situation-card starting-point-card" data-aos>
+                    <h4 class="situation-title">Make the Case That Wins</h4>
+                    <p>Leadership doesn&rsquo;t care about hype.</p>
+                    <p>They care about ROI, risk, and results — you need a case that actually lands.</p>
+                </article>
+            </div>
+
+            <h3 class="subsection-heading subsection-heading-spaced" data-aos>Signals I often see</h3>
+            <p class="signals-intro" data-aos>Common behavioural patterns—each maps to a different entry point, but the same stack underneath.</p>
+            <div class="situation-grid situation-grid--six">
+                <article class="situation-card" data-aos>
+                    <span class="situation-stack-tag">surface → habits</span>
+                    <h4 class="situation-title">Tool-first momentum</h4>
+                    <p>Platforms and vendors get chosen before outcomes are crisp. Teams look busy, releases feel brittle,
+                        and nobody can explain the ROI in one sentence.</p>
+                </article>
+                <article class="situation-card" data-aos>
+                    <span class="situation-stack-tag">alignment</span>
+                    <h4 class="situation-title">Roadmap drift</h4>
+                    <p>Product and platform talk past each other: features ship while operability, security, and cost
+                        are treated as a late surprise instead of a joint bet.</p>
+                </article>
+                <article class="situation-card" data-aos>
+                    <span class="situation-stack-tag">habits</span>
+                    <h4 class="situation-title">Hero knowledge</h4>
+                    <p>One or two people hold production in their heads. Change feels risky; on-call is tense; knowledge
+                        does not compound into runbooks and automation.</p>
+                </article>
+                <article class="situation-card" data-aos>
+                    <span class="situation-stack-tag">surface → constraints</span>
+                    <h4 class="situation-title">Pilot purgatory</h4>
+                    <p>POCs multiply but nothing graduates or gets killed. Budget and attention leak with no explicit
+                        kill/scale decision—classic exploration without closure.</p>
+                </article>
+                <article class="situation-card" data-aos>
+                    <span class="situation-stack-tag">alignment</span>
+                    <h4 class="situation-title">Executive abstraction</h4>
+                    <p>Leadership wants “AI” or “cloud modernisation” as a headline. You need a measurable narrative
+                        and staged bets—not a slide of buzzwords.</p>
+                </article>
+                <article class="situation-card" data-aos>
+                    <span class="situation-stack-tag">constraints → habits</span>
+                    <h4 class="situation-title">Compliance without flow</h4>
+                    <p>Risk and regulation are real, but reviews turn into gates that stall delivery. You need controls
+                        that match how software actually ships.</p>
+                </article>
+            </div>
+
+            <h3 class="subsection-heading subsection-heading-spaced" data-aos>How I work with you</h3>
+            <p class="how-intro" data-aos>Three stacked modes—usually interleaved—so behaviour, systems, and evidence move together.</p>
+            <ol class="how-steps">
+                <li class="how-step" data-aos>
+                    <span class="how-step-num">1</span>
+                    <div class="how-step-body">
+                        <h4 class="how-step-title">Strategy &amp; advisory — reframe the stack</h4>
+                        <p>Clarify outcomes, incentives, and sequencing: what to adopt, defer, or stop. Named trade-offs
+                            so product, finance, and engineering can agree on the same story—not parallel fictions.</p>
+                    </div>
+                </li>
+                <li class="how-step" data-aos>
+                    <span class="how-step-num">2</span>
+                    <div class="how-step-body">
+                        <h4 class="how-step-title">Technical &amp; product support — embed in how you ship</h4>
+                        <p>Hands-on work on infra, security, and delivery paths that fit your team’s real habits: CI/CD,
+                            observability, guardrails, and feedback loops people will actually use.</p>
+                    </div>
+                </li>
+                <li class="how-step" data-aos>
+                    <span class="how-step-num">3</span>
+                    <div class="how-step-body">
+                        <h4 class="how-step-title">Rapid exploration — time-boxed proof</h4>
+                        <p>Short spikes and pilots with clear success and exit criteria: prove or disprove fast, then
+                            scale, pivot, or kill—so exploration does not become permanent thrash.</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="contact" class="cta-band">
+        <div class="container" data-aos>
+            <h2>One partner for the whole critical path</h2>
+            <p>
+                If you are hiring for reliability, migration, chain ops, or a leaner cloud bill, you get a single
+                accountable expert who has shipped at protocol scale and inside regulated enterprises.
+            </p>
+            <a href="mailto:rishikesh.pal@gmail.com" class="btn btn-primary">
+                <span>rishikesh.pal@gmail.com</span>
+            </a>
+            <p style="margin-top:24px;font-size:0.9rem;color:var(--text-muted);">
+                Letterkenny, Ireland · Remote worldwide
+            </p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <span class="logo-bracket">{</span>
+                <span class="logo-text">RP</span>
+                <span class="logo-bracket">}</span>
+            </div>
+            <p class="footer-text">Platform &amp; infrastructure consultancy · DevOps · SRE · Cloud · Blockchain · Security</p>
+            <p class="footer-text" style="margin-top:8px;">
+                <a href="index.html" style="color:var(--accent-secondary);text-decoration:none;">Portfolio</a>
+                ·
+                <a href="blog.html" style="color:var(--accent-secondary);text-decoration:none;">Blog</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
