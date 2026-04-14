@@ -144,6 +144,20 @@
     stroke: var(--accent-gold);
 }
 
+/* Leadership style */
+.post-image-placeholder.leadership {
+    background: rgba(0, 245, 160, 0.1);
+    border-color: rgba(0, 245, 160, 0.25);
+}
+
+.post-card:hover .post-image-placeholder.leadership {
+    box-shadow: 0 0 30px rgba(0, 245, 160, 0.2);
+}
+
+.post-image-placeholder.leadership svg {
+    stroke: #00f5a0;
+}
+
 /* Blockchain style */
 .post-image-placeholder.blockchain {
     background: rgba(156, 39, 176, 0.1);
@@ -669,6 +683,11 @@
 
 .comparison-table .status-lost {
     color: var(--accent-tertiary);
+    font-weight: 600;
+}
+
+.comparison-table .status-gained {
+    color: var(--accent-primary);
     font-weight: 600;
 }
 
